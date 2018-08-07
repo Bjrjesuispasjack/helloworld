@@ -19,9 +19,9 @@ const user = require("./user.json");
 const reddit = require("./reddit.json");
 		//salon 
 			//salons DexSia Introduce YourSelf
-			    const annDXSIY = "452800422655033365"; //salon annonce DexSia Introduce Yourself
+			    const annDXSIY = "476410646620143649"; //salon annonce DexSia Introduce Yourself
 			//Portal DexSia Introduce Yourself
-			    const annPoDXSIY = "455740492999688192"; //salon annonce de Portal Dxs IY
+			    const annPoDXSIY = "476410846763810828"; //salon annonce de Portal Dxs IY
 
 			//Portal DexSia
 
@@ -52,7 +52,7 @@ const reddit = require("./reddit.json");
 	bot.on('ready', () => {
 	    bot.user.setPresence({ game: { name: activ}});
 	    console.log("Le bot est prêt");
-	    bot.channels.get(salon.pologdxs).send({embed: {color: 0x3ac400, author: {name: "Je suis en ligne :D",
+	    bot.channels.get(salon.console).send({embed: {color: 0x3ac400, author: {name: "Je suis en ligne :D",
 	      icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"}}})
 	});
 
@@ -60,14 +60,14 @@ const reddit = require("./reddit.json");
 bot.on("guildMemberAdd", member => { //Quand un membre entre dans le serveur
     var welcomeDXS = member.guild.channels.find("name", "welcome"); //variable pour le salon welcome
     welcomeDXS.sendMessage('Passe un bon moment dans la **DexSia** ' + member.user + ' <:051wink:473830228410499072>') //envoie le message de bienvenue
-    bot.channels.get(salon.pologdxs).sendMessage(member.user + " est arrivé dans la DexSia, le message s'est bien affiché")  //console
+    bot.channels.get(salon.console).sendMessage(member.user + " est arrivé dans la DexSia, le message s'est bien affiché")  //console
 });
 
 //leave member
 bot.on("guildMemberRemove", member => { //Quand un membre quitte dans le serveur
     var aurevoirDXS = member.guild.channels.find("name", "aurevoir"); //variable pour le salon aurevoir
     aurevoirDXS.sendMessage('**' + member.displayName + '** est partie. Rest in pepperoni... <:051cry:473830225801641987>') //envoie le message de aurevoir
-    bot.channels.get(salon.pologdxs).sendMessage(member.user + " a quitté la DexSia, le message s'est bien affiché")  //console
+    bot.channels.get(salon.console).sendMessage(member.user + " a quitté la DexSia, le message s'est bien affiché")  //console
 })
 
 //on message
